@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm giá trị lớn nhất trong mảng</title>
+</head>
+<body>
+<script>
+    let x = [-1,3,4,5,2,9];
+    let max = x [0];
+    let index = 0 ;
+    for (i=1 ; i < x.length ; i ++){
+       if (x[i]>max){
+           max = x [i];
+           index = i ;
+       }
+    }
+    document.write(max +' là giá trị lớn nhất nằm ở vị trí số ' + index );
+</script>
+</body>
+</html>
