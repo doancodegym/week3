@@ -11,35 +11,40 @@
     <input type="text" id ="input" width="200px">
     <input type="button" onclick="timkiem()" value="Tìm Kiếm"/>
 </form>
-    <script>
-        function timkiem() {
-            let english = ["color", "dog", "chicken", "lemon", "apple"];
-            let vietnames = ["màu sắc", "con chó", "con gà", "quả chanh", "quả táo"];
-            let tukhoa = document.getElementById("input").value;
-            let index;
-            for (i = 0; i < english.length; i++) {
-                if (tukhoa === english[i]) {
-                    alert("Tiếng việt có nghĩa là : " + vietnames[i]);
-                    break;
-                    if (tukhoa !== english[i]){
-                    alert('Không tìm thấy');
-                    break;
-                    }
-                }
-            }
-            for (j = 0; j < vietnames.length; j++) {
-                if (tukhoa === vietnames[j]) {
-                    index = english[j]
-                    alert("Tiếng Anh có nghĩa là : " + english[j]);
-                    break;
-                    if (tukhoa !== vietnames[j]) {
-                        alert('Không tìm thấy !');
-                        break;
-                    }
-                }
+<script>
+    function timkiem() {
+        let english = ["color", "dog", "chicken", "lemon", "apple"];
+        let vietnames = ["màu sắc", "con chó", "con gà", "quả chanh", "quả táo"];
+        let tukhoa = document.getElementById("input").value;
+        let index = -1;
+        let inde = -1;
+        for (i = 0; i < english.length; i++) {
+            if (tukhoa === english[i]) {
+                index = i;
+                break;
             }
         }
-    </script>
+        if (index > -1){
+            alert("Tiếng việt có nghĩa là : " + vietnames[index]);
+        }
+        else {
+            alert("Không tìm thấy !");
+        }
+
+        for (j = 0; j < vietnames.length; j++) {
+            if (tukhoa === vietnames[j]) {
+                index = j
+                break;
+            }
+        }
+        if (index > -1){
+            alert("Tiếng Anh có nghĩa là : " + english[index]);
+        }
+        else {
+            alert("Không tìm thấy !");
+        }
+    }
+</script>
 
 </body>
 </html>
