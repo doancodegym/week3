@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập 3</title>
+</head>
+<body>
+<script>
+    let x = [];
+    let max = 0;
+    let y = Number(prompt('Nhập số lượng phần tử :'));
+    let tong = 0;
+    for (i = 0; i < y ;i++){
+        let val = Number(prompt('Nhập giá trị thứ ' + i));
+        x[i] = val;
+    }
+    for ( i = 0;i < x.length; i++ ) {
+        if (x[i] >= max) {
+            max = x[i];
+        }
+        tong += x[i];
+    }
+    let giatriTB = tong/x.length;
+    document.write(max + ' là giá trị lớn nhất'+'<br>');
+    document.write('Giá trị trung bình các giá trị vừa nhập là : ' + giatriTB.toFixed(1));
+</script>
+</body>
+</html>

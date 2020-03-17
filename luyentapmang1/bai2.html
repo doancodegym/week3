@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập 2</title>
+</head>
+<body>
+<script>
+    let x  = [];
+    let max = 0;
+    let vitri;
+    for (i =0; i < 10 ; i ++ ){
+        let val = Number(prompt('Nhập giá trị thứ ' + i));
+        x[i] = val;
+    }
+    for (i = 0;  i < 10 ; i ++){
+        if (x[i] >= max){
+            max = x [i];
+            vitri = i;
+        }
+    }
+    document.write(max + ' là số lớn nhất vừa nhập vào !' + '<br>'+'Tại vị trí '+ vitri);
+</script>
+</body>
+</html>

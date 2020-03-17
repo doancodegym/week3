@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập 1</title>
+</head>
+<body>
+<script>
+    let x = [];
+    for (i = 0;i < 10;i ++){
+        let val = Number(prompt('Nhập giá trị thứ '+ i));
+        x[i] = val;
+    }
+    let z=0;
+    for (i = 0;i < 10;i ++){
+        if (x[i] >= 10){
+            z ++;
+        }
+    }
+    document.write('Có ' + z + ' số nguyên lớn hơn hoặc bằng 10');
+</script>
+</body>
+</html>

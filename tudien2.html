@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ Điển</title>
+</head>
+<body>
+<h3>Tìm kiếm từ điển</h3>
+<br>
+<form action="">
+    <input type="text" id="input" width="200px">
+    <input type="button" onclick="timkiem()" value="Tìm Kiếm"/>
+</form>
+<script>
+    function timkiem() {
+        let english = ["color", "dog", "chicken", "lemon", "apple"];
+        let vietnames = ["màu sắc", "con chó", "con gà", "quả chanh", "quả táo"];
+        let tukhoa = document.getElementById("input").value;
+        let index = -1;
+        let englishWord = false;
+        let inde = -1;
+        for (i = 0; i < english.length; i++) {
+            if (tukhoa === english[i]) {
+                index = i;
+                englishWord = true;
+                break;
+            }
+        }
+        if (englishWord) {
+            if (index > -1) {
+                alert("Tiếng việt có nghĩa là : " + vietnames[index]);
+            } else {
+                alert("Không tìm thấy !");
+            }
+        } else {
+            for (j = 0; j < vietnames.length; j++) {
+                if (tukhoa === vietnames[j]) {
+                    index = j
+                    break;
+                }
+            }
+            if (index > -1) {
+                alert("Tiếng Anh có nghĩa là : " + english[index]);
+            } else {
+                alert("Không tìm thấy !");
+            }
+        }
+    }
+</script>
+</body>
+</html>
