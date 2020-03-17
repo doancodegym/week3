@@ -17,7 +17,8 @@
         let vietnames = ["màu sắc", "con chó", "con gà", "quả chanh", "quả táo"];
         let tukhoa = document.getElementById("input").value;
         let index = -1;
-        let inde = -1;
+        let index2 = -1;
+        let englishkey = true;
         for (i = 0; i < english.length; i++) {
             if (tukhoa === english[i]) {
                 index = i;
@@ -25,22 +26,17 @@
             }
         }
         if (index > -1){
-            alert("Tiếng việt có nghĩa là : " + vietnames[index]);
-        }
-        else {
-            alert("Không tìm thấy !");
-        }
-
+            alert("Tiếng việt có nghĩa là : " + vietnames[index]);}
         for (j = 0; j < vietnames.length; j++) {
             if (tukhoa === vietnames[j]) {
-                index = j
+                index2 = j;
                 break;
             }
         }
-        if (index > -1){
-            alert("Tiếng Anh có nghĩa là : " + english[index]);
+        if (index2 > -1){
+            alert("Tiếng Anh có nghĩa là : " + english[index2]);
         }
-        else {
+        if (index === -1 && index2 === -1) {
             alert("Không tìm thấy !");
         }
     }
