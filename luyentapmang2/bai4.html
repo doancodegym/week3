@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let join1 = prompt("Nhập chuỗi cần check : ");
+    let inVal = join1.toString();
+    let count = 0;
+    for(i=0;i<inVal.length;i++){
+        if(inVal[i] === " "){
+            count++;
+        }
+    }
+    document.write("Chuỗi có "+ (count+1) +" từ.");
+</script>
+</body>
+</html>

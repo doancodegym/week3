@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập 2</title>
+</head>
+<body>
+<script>
+    let num = [];
+    let sll =Number(prompt('Nhập số lượng phần tử : '));
+    for(i=0;i<sll;i++){
+        let val=prompt("Nhập giấ trị thứ : " + i);
+        num[i]=val;
+    }
+    let inp = num.toString();
+    let x = 0;
+    let y = inp.length - 1 ;
+    let outp = [];
+    outp.length = inp.length;
+    while (x<=y){
+        let z = inp[x];
+        outp[x] = inp[y];
+        outp[y]=z;
+        x ++;
+        y --;
+    }
+    document.write(outp.toString());
+</script>
+</body>
+</html>

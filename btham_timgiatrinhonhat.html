@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT Hàm tìm giá trị nhỏnhất trong mảng</title>
+</head>
+<body>
+<script>
+    let arr1 = [3, 5, 1, 8, -3, 7, 8];
+    let min = minArray(arr1);
+    alert('Giá trị nhỏ nhất là : ' + min);
+    function minArray(arr) {
+        let min = arr[0];
+        for(var i = 1; i < arr.length; i++){
+            if(arr[i] < min){
+                min = arr[i];
+            }
+        }
+        return min;
+    }
+</script>
+</body>
+</html>

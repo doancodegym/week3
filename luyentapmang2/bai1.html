@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài  tập 1</title>
+</head>
+<body>
+<script>
+    var array = [
+        [1, 2, 1, 24],
+        [8, 11, 9, 4],
+        [7, 0, 7, 27],
+        [7, 4, 28, 14],
+        [3, 10, 26, 7]
+    ];
+    let result = "";
+    for(index in array){
+        result += "Row " + index + "<br>";
+        for(j=0;j<4;j++){
+            result += array[index][j] + "<br>";
+        }
+    }
+    document.write(result);
+</script>
+
+</body>
+</html>
