@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập 3</title>
+</head>
+<body>
+<script>
+    document.write('Năm nay bạn : ' + tinhtuoi() + ' tuổi')
+    function tinhtuoi() {
+        let year =Number(prompt('Nhập năm sinh của bạn : '));
+        let x = 2020;
+        let yearold;
+        if (year < x){
+            yearold = x - year;
+        }
+        else{
+            alert('Không hợp lệ !!!')
+        }
+        return yearold;
+    }
+</script>
+
+</body>
+</html>

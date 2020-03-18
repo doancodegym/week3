@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập 2</title>
+</head>
+<body>
+<script>
+    document.write("Tổng số lẻ trong mảng : " + tinhsole());
+    function tinhsole(){
+        let num = 0;
+        let x = [];
+        let y = Number(prompt('Nhập số lượng phần tử :'));
+        for (i = 0; i < y ;i++){
+            let val = Number(prompt('Nhập giá trị thứ ' + i));
+            x[i] = val;
+        }
+        for (i = 0;i<x.length;i++){
+            if (x[i] % 2 != 0){
+                num += x[i];
+            }
+        }
+        return num;
+    }
+
+</script>
+</body>
+</html>

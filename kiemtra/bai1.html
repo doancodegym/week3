@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập 1</title>
+</head>
+<body>
+<form action="">
+    <p>Enter a Number : </p>
+    <input type="text" id="val" width="300px">
+    <button type="button" onclick="baitap()">Show</button>
+</form>
+<script>
+ function baitap() {
+     let num = document.getElementById("val").value;
+     let count = 0 ;
+     let N = 2;
+     let i = 2;
+     let flag;
+
+         do{
+         for(i=2;i<N;i++){
+             flag=true;
+             if(N%i == 0){
+                 flag=false;
+                 break;
+             }
+
+         }
+         if (flag===true){
+             document.write(+ N + " , ");
+             count++;
+         }
+         N++;
+
+     }while (count<num);
+
+
+ }
+</script>
+</body>
+</html>
