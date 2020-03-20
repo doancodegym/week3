@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập 5 - Luyện tập Hàm</title>
+</head>
+<body>
+<script>
+    var star = ["Polaris","Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    var constellation = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+    let inputStar = prompt("Tên ngôi sao : ");
+    let x = -1;
+    check(inputStar);
+    if(x == -1){
+        alert("Không tìm thấy ngôi sao")
+    }else {
+        alert(star[x]+" thuộc chòm sao " +constellation[x]);
+    }
+
+    function check(y) {
+        for(i=0;i<star.length;i++){
+            if(y == star[i]){
+                x = i;
+            }
+        }
+
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập 2 - Luyện tập Hàm 2</title>
+</head>
+<body>
+<script>
+    let y = Number(prompt("Mời nhập bán kính đường tròn"));
+    document.write("Diện tích hình tròn với bán kính "+y+" là: "+acreage(y).toFixed(2)+"<br>");
+    document.write("Chu vi hình tròn với bán kính "+ y +" là: "+perimeter(y).toFixed(2));
+    function acreage(x) {
+        return Math.pow(x,2)*Math.PI;
+    }
+    function perimeter(x) {
+        return 2*x*Math.PI;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập 2 - Luyện tập hàm</title>
+</head>
+<body>
+<input type="text" id="text1">
+<button onclick="total()">Click</button>
+<script>
+    function total() {
+        let y = document.getElementById("text1").value;
+        let sum = 0;
+        for (i=0;i < y;i++){
+            sum += i
+        }
+        document.write(sum);
+    }
+</script>
+
+</body>
+</html>

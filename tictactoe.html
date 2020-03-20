@@ -2,51 +2,111 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Cờ caro</title>
+    <title>Tic Tac Toe</title>
 </head>
-<body>
-<center>
-    <h1>GAME CỜ CARO</h1>
-    <p id = "caro"></p>
-    <script>
-        let b = document.getElementById("caro");
+<body onclick="check()">
+<p id="carogame"></p><br>
+<script>
+    let b = document.getElementById("carogame ");
 
-        let board = [];
-        let data = "";
-        for (let i = 0; i < 5; i ++) {
-            board[i] = new Array(".",".",".",".",".")}
+    let board = [];
+    let data = "";
+    for (let i = 0; i < 5; i++) {
+        board[i] = [".",".",".",".","."];
+    }
+
+    for (let i = 0; i < 5; i++) {
+        data += "<br/>";
+        for (let j = 0; j < 5; j++) {
+            data += board[i][j] + "&nbsp;&nbsp;"
+        }
+    }
+
+    data += "<br/><br/><input type='button' value='Player 1' onclick='player1()'>" +"<br>" + '<input type="button" value="Player 2" onclick="player2()">';
+    document.getElementById("carogame").innerHTML = data;
+    function player1() {
+        let x1 = prompt("X1: ");
+        let y1 = prompt("Y1: ");
+        data = "";
+        if (  board[x1][y1] === "."){
+            board[x1][y1] = "X";
+        }
+        else {
+            alert("Change Again pls");
+            x1 = prompt("X1: ");
+            y1 = prompt("Y1: ");
+        }
+
         for (let i = 0; i < 5; i++) {
-            data += "<br>";
+            data += "<br/>";
             for (let j = 0; j < 5; j++) {
-                data += board [i][j] + "&nbsp;&nbsp;";
+                data += board[i][j] + "&nbsp;&nbsp;";
             }
+        }
+        data += "<br/><br/><input type='button' value='Player 1' onclick='player1()'>" +"<br>" + '<input type="button" value="Player 2" onclick="player2()">';
+        document.getElementById("carogame").innerHTML = "<hr/>" + data;
     }
-        data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>"
-        b.innerHTML = "<hr width='200px'/>" + data;
-        function changeValue() {
-            let x = prompt("Nhập X1: ");
-            let y = prompt("Nhập Y1: ");
-            let z = prompt("Nhập X2: ");
-            let w = prompt("Nhập Y2: ");
-            data = "";
-            board[x][y] = "x";
-            for (let i = 0; i < 5; i++) {
-                data += "<br/>";
-                for (let j = 0; j < 5; j++) {
-                    data += board[i][j] + "&nbsp;&nbsp;";
-                }
+
+    function player2() {
+        let x2 = prompt("X2: ");
+        let y2 = prompt("Y2: ");
+        data = "";
+        if (  board[x2][y2] === "."){
+            board[x2][y2] = "O";}
+        else {
+            alert("Không hợp lệ");
+            x2 = prompt("X2: ");
+            y2 = prompt("Y2: ");
+        }
+
+        for (let i = 0; i < 5; i++) {
+            data += "<br/>";
+            for (let j = 0; j < 5; j++) {
+                data += board[i][j] + "&nbsp;&nbsp;";
             }
-            board[z][w] = "0";
-            for ( let k = 0 ; k < 5 ; k ++)
-                data += "</br>";
-                for(let m=0 ; m < 5 ; m ++) {
-                    data += board[k][m];
-                }
-        data += "<br/><br/><input type='button' value='Thay đổi' onclick='changeValue()'>"
-            b.innerHTML = "<hr width='200px'/>" + data;
+        }
+        data += "<br/><br/><input type='button' value='Player 2' onclick='player1()'>" +"<br>" + '<input type="button" value="Player 2" onclick="player2()">';
+        document.getElementById("carogame").innerHTML = "<hr/>" + data;
     }
-    </script>
-    </center>
+    function check() {
+        let x = "X";
+        let o = "O";
+        let flag1 = true ;
+        let flag2 = true ;
+        let flag3 = true ;
+        let flag4 = true ;
+        let flag5 = true ;
+        let flag6 = true ;
+        for (i= 0,j=0;i<5,j<5;i++,j++){
+            if(board[i][j] === x && board[i + 1][j+1] === x && board[i+2][j+2]=== x  ){
+                flag1 = false
+            }
+            else if (board[i][j] === o && board[i + 1][j+1] === o && board[i+2][j+2]=== o ) {
+                flag2 = false
+            }
+            else  if (board[i][j] === x && board[i][j+1] === x && board[i][j+2] === x) {
+                flag3 = false
+            }
+            else  if (board[i][j] === o && board[i][j+1] === o && board[i][j+2] === o ) {
+                flag4 = false
+            }
+            else  if (board[i][j] === x && board[i+1][j] === x && board[i+2][j] === x ) {
+                flag5 = false
+            }
+            else  if (board[i][j] === o && board[i+1][j] === o && board[i+2][j] === o ) {
+                flag6 = false
+            }
+        }
+        if (flag1 === false || flag3 === false || flag5 === false){
+            (alert("Player 1 win"))
+        }
+        else if ( flag2 === false || flag4 === false || flag6 === false){
+            alert("Player 2 win")
+        }
+    }
+
+
+</script>
 
 </body>
 </html>

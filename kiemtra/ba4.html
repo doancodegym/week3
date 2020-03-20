@@ -6,14 +6,15 @@
 </head>
 <body>
 <script>
-    document.write(tinhtong());
-    function tinhtong(){
-        let x = [[3,2,4,2],[7,3,5,9],[3,5,9,6],[2,4,7,2]];
-        let tong = 0;
+    document.write(total());
+    let x = [[3,2,4,2],[7,3,5,9],[3,5,9,6],[2,4,7,2]];
+    function total(a){
+
+        let y = 0
         for (i=0;i<x.length;i++){
-                    tong += x[i][i]
+                    y += x[i][i]
         }
-        return tong;
+        return y;
     }
 
 </script>

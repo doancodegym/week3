@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra đối xứng</title>
+</head>
+<body>
+<script>
+    function isPalindrome(arr) {
+        console.log(arr);
+        if (arr.length <= 1) return true; // boolean
+        let firstChar = arr[0];
+        let lastChar = arr[arr.length - 1];
+        if (firstChar !== lastChar) {
+            return false; // boolean
+        }  else {
+            arr.shift(); // xoá phần tử đầu tiên
+            arr.pop();   // xoá phần tử cuối cùng
+            return isPalindrome(arr); // gọi lại chính nó với chuỗi mới (đã xoá 2 phần tử đầu tiên và cuối cùng);
+        }
+    }
+    let chuoi1 = "redder";
+    // chuyển chuỗi thành mảng
+    let mang1 = chuoi1.split("");
+    let ketQua = isPalindrome(mang1);
+    document.write(ketQua);
+</script>
+</body>
+</html>

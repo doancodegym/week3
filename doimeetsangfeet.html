@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đổi mét sang Feet</title>
+</head>
+<body>
+<p>Nhập giá trị :</p>
+<input type="text" id="val">
+<input type="button" onclick="meter()" value="Meet">
+<input type="button" onclick="feet()" value="Feet">
+<script>
+    function meter() {
+        let met;
+        let x = document.getElementById("val").value;
+        met = 0.305 * x;
+        document.write(x + ' feet đổi sang mét là ' + met + ' mét !')
+    }
+    function feet() {
+        let fet;
+        let y = document.getElementById("val").value;
+        fet = 3.279 * y;
+        document.write(y + ' mét đổi sang feet là ' + fet + ' feet !')
+
+    }
+</script>
+</body>
+</html>
