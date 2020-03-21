@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập 9 - Luyện tập hàm 2</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    let x = Number(prompt('Nhập số phần tử : '));
+    for(i = 0;i < x; i ++){
+        let y = Number(prompt('Nhập phần tử thứ ' +i));
+        arr[i] = y;
+    }
+    let num = Number(prompt('Nhập số cần kiểm tra '));
+    document.write(check(num,arr));
+    function check(checknum,leg) {
+        for(i = 0;i < leg.length;i ++){
+            let sum = 0;
+            if (checknum == leg[i]){
+                sum ++;
+                if (sum > 0){
+                    return sum;
+                }
+                else {
+                    return -1;
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>

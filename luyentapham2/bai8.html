@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập 8 - Luyện tập hàm 2</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    let x = Number(prompt('Nhập số lượng phần tử :'))
+    for (i= 0 ; i < x ; i ++){
+        let num = Number(prompt('Nhập giá trị thứ ' + i ));
+        arr[i] = num;
+    }
+    document.write(reverseArr(arr));
+    function reverseArr(y) {
+        let first = 0;
+        let last =y.length - 1 ;
+        while (first < last){
+            let j = y[first];
+            y[first] = y[last];
+            y[last] = j;
+            first++;
+            last--;
+        }
+        return y;
+    }
+</script>
+</body>
+</html>
