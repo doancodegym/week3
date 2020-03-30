@@ -1,0 +1,88 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<script>-->
+<!--    // let x = [1, 3, 5, 8];-->
+<!--    // for (let i = 0; i < x.length; i++) {-->
+<!--    //     if (x[i] > 4) {-->
+<!--    //         x[i] = 0;-->
+<!--    //     }-->
+<!--    // }-->
+<!--    // console.log(x);-->
+
+<!--    // let x = [1,3,5,8];-->
+<!--    // x.pop();-->
+<!--    // x.push(7);-->
+<!--    // console.log(x);-->
+
+<!--    // let x = [1, 3, 5];-->
+<!--    // x[0] = 15;-->
+<!--    // x[3] = 77;-->
+<!--    // console.log(x);-->
+
+<!--    // let a = new Array(12, false, "text");-->
+<!--    // x = 10;-->
+<!--    // if (a[1]) x = 20;-->
+<!--    // else x = 30;-->
+
+
+
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tic Tac Toe</title>
+</head>
+<body>
+<p id="carogame" />
+<input type="button" value="Change Value" onclick="changeValue()">
+<script>
+    let b = document.getElementById("carogame ");
+
+    let board = [];
+    let data = "";
+    for (let i = 0; i < 5; i++) {
+        board[i] = [".",".",".",".","."];
+    }
+
+    for (let i = 0; i < 5; i++) {
+        data += "<br/>";
+        for (let j = 0; j < 5; j++) {
+            data += board[i][j] + "&nbsp;&nbsp;"
+        }
+    }
+
+    data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>";
+    document.getElementById("carogame").innerHTML = data;
+    console.log(data);
+    function changeValue() {
+        let positionX1 = prompt("X1: ");
+        let positionY1 = prompt("Y1: ");
+        let positionX2 = prompt("X2: ");
+        let positionY2 = prompt("Y2: ");
+        data = "";
+
+
+        if (  board[positionX1][positionY1] === "."){ board[positionX1][positionY1] = "X";} else {alert("Change Again pls");positionX1 = prompt("X1: ");positionY1 = prompt("Y1: ");}
+        if (  board[positionX2][positionY2] === "."){ board[positionX2][positionY2] = "O";} else {alert("Change Again pls");positionX1 = prompt("X2: ");positionY1 = prompt("Y2: ");}
+
+        for (let i = 0; i < 5; i++) {
+            data += "<br/>";
+            for (let j = 0; j < 5; j++) {
+                data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+            }
+        }
+        data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>";
+        document.getElementById("carogame").innerHTML = "<hr/>" + data;
+    }
+</script>
+</body>
+</html>

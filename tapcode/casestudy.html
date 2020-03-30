@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td><p>Tên sản phẩm : </p></td>
+        <td><input id="addname" /></td>
+    </tr>
+    <tr>
+        <td><p>Mã sản phẩm : </p></td>
+        <td><input id="addcode" /></td>
+    </tr>
+    <tr>
+        <td><p>Hạn sử dụng : </p></td>
+        <td><input id="addexpiry" /></td>
+    </tr>
+    <tr>
+        <td><p>Số lượng : </p></td>
+        <td><input id="addamount" /></td>
+    </tr>
+    <tr>
+        <td><p>Đơn giá : </p></td>
+        <td><input id="addprice" /></td>
+    </tr>
+</table>
+
+<button onclick="demo.add()">Thêm sản phẩm</button><br/><br/>
+<button onclick="play.display()">Danh sách sản phẩm</button><br/>
+<div id="result"></div>
+<script>
+    // let name = document.getElementById("addname").value;
+    // let code = document.getElementById("addcode").value;
+    // let expiry = document.getElementById("addexpiry").value;
+    // let amount = document.getElementById("addamount").value;
+    // let price = document.getElementById("addprice").value;
+    let Product = function(nameProduct,codeProduct,expiryDate,amountProduct,priceProduct) {
+        this.nameProduct = nameProduct;
+        this.codeProduct = codeProduct;
+        this.expiryDate = expiryDate;
+        this.amountProduct = amountProduct;
+        this.priceProduct = priceProduct;
+        this.add = function () {
+            let manageName = [];
+            let manageCode = [];
+            let manageExpiry = [];
+            let manageAmount = [];
+            let managePrice = [];
+            this.nameProduct = document.getElementById("addname").value;
+            this.codeProduct = document.getElementById("addcode").value;
+            this.expiryDate = document.getElementById("addexpiry").value;
+            this.amountProduct = document.getElementById("addamount").value;
+            this.priceProduct = document.getElementById("addprice").value;
+
+            let name = this.nameProduct;
+            let code = this.codeProduct;
+            let expiry = this.expiryDate;
+            let amount = this.amountProduct;
+            let price = this.priceProduct;e
+            manageName.push(name);
+            manageCode.push(code);
+            manageExpiry.push(expiry)
+            manageAmount.push(amount);
+            managePrice.push(price);
+        }
+    }
+    let ManageProduct = function (){
+        this.display = function () {
+            let t = "<table border='1'>";
+            t = t + "<tr>";
+            t = t + "<th>" + "Tên sản phẩm" + "</th>";
+            t = t + "<th>" + "Mã sản phẩm" + "</th>";
+            t = t + "<th>" + "Hạn sử dụng" + "</th>";
+            t = t + "<th>" + "Số lượng" + "</th>";
+            t = t + "<th>" + "Đơn giá" + "</th>";
+            t = t + "<th>" + "Tùy chọn" + "</th>";
+            t = t + "</tr>";
+            for (let i = 0; i < 1; i++) {
+                t = t + "<tr>";
+                t = t + "<td id='product" + i + "'>" + demo.nameProduct(manageName[i]) + "</td>" +
+                    "<td>" + demo.codeProduct(manageCode[i]) + "</td>" +
+                    "<td>" + demo.expiryDate(manageExpiry[i]) + "</td>" +
+                    "<td>" + demo.amountProduct(manageAmount[i]) + "</td>" +
+                    "<td>"+ demo.priceProduct(managePrice[i])+"</td>"+
+                    "<td><button onclick='editProduct(" + i + ")'>Sửa</button>" +
+                    "<button onclick='deleteProduct(" + i + ")'>Xóa</button></td>";
+                t = t + "</tr>";
+            }
+            t = t + "</table>";
+            document.getElementById("result").innerHTML = t;
+        }
+    }
+    let play = new ManageProduct();
+    let demo = new Product();
+
+</script>
+</body>
+</html>
